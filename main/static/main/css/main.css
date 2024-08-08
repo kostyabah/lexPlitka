@@ -1,0 +1,844 @@
+html{
+    height: 100%;
+}
+body {
+    margin: 0;
+    font-family: Tahoma, Helvetica, Arial, sans-serif;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    background: url(../img/tileBG.png) no-repeat center center fixed;
+    -webkit-background-size: cover;
+       -moz-background-size: cover;
+         -o-background-size: cover;
+            background-size: cover;
+    
+}
+main {
+    flex: 1 0 auto;
+}
+/* -----------------------------------aside---------------------------------- */
+.nav-list {
+    margin-top: 6vw;
+    list-style-type: none;
+}
+
+.nav-list a {
+    text-decoration: none;
+    color: inherit;
+    margin-left: 10px;
+}
+
+.aside {
+    z-index: 1;
+    height: 100vh;
+    background-color: #0f0f0f;
+    background-image: linear-gradient(to bottom right, #262222, #0f0f0f);
+    width: 170px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+/* .header {
+    margin-left: 15px;
+} */
+
+.nav-list li {
+    line-height: 5vh;
+    display: block;
+    color: white;
+    font-weight: 500;
+    font-size: 14px;
+   
+}
+
+/* .nav-list li:hover, .nav-list-link.active{
+    
+    transform: scale(1.02);
+    transition: all  ease;
+} */
+/* -----------------------------------важное для анимации---------------------------------- */
+.nav-list-link, .nav-list a {
+    position: relative;
+    transition: all 0.25 ease;
+   
+}
+.nav-list-link:hover::after {
+    
+    transform: scale(1);
+}
+
+
+.nav-list-link::after {
+    content: "";
+    background: aqua;
+    height: 1.5px;
+    width: 100%;
+    position: absolute;
+    bottom: -8px;
+    left: 0;
+    transform: scaleX(0);
+    transition: all 0.6s ease;
+
+}
+.nav-list li .activeLink {
+    /* border-bottom: 1px solid aqua;
+    padding-bottom: 8px; */
+    color: aqua;
+}
+/* -----------------------------------важное для анимации---------------------------------- */
+/* .nav-list-link:hover {
+    color: aqua;
+    
+} */
+/* -----------------------------------новое для анимации---------------------------------- */
+
+/* .nav-list li .active {
+    color: aqua;
+    
+}
+.nav-list li :hover {
+   border-bottom: 2px solid aqua;
+    width: 100%;
+    border-radius: 2px;
+    transition: 0.5s ease;
+} */
+
+/* -----------------------------------новое для анимации---------------------------------- */
+
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    margin-top: 3vh;
+    text-decoration: none;
+}
+
+.logo-img {
+    margin-left: 20px;
+
+}
+.logo-text {
+    margin-top: 13px;
+    margin-left: 10px;
+    width: 50px;
+    color: white;
+    line-height: 20px;
+    font-weight: bold;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+}
+.title-aqua {
+    color: aqua;
+
+}
+
+.nav-list {
+    margin-top: 20vh;
+    margin-left: -20px;
+}
+.button {
+    font-size: 0.9em;
+    border: 2px solid aqua;
+    display: flex;
+    color: white;
+    align-items: center;
+    font-weight: bold;
+    padding: 6px 20px;
+    margin-top: 20vh;
+    margin-left: 10px;
+    text-decoration: none;
+    border-radius: 5px;
+}
+#tel {
+    margin-right: 15px;
+    }
+
+.button:hover {
+    transition: all .25s ease;
+    cursor: pointer;
+    color: aqua;
+}
+    
+#tel:hover {
+    color: aqua;
+}
+
+.button:hover {
+    border: 1.5px solid white;
+    transition: all .25s ease;
+    cursor: pointer;
+    color: aqua;
+    
+    .tel {
+        color: aqua;
+    }
+}
+/* -----------------------------------aside---------------------------------- */
+
+.main {
+    margin-left: 170px;
+    margin-right: 0;
+    padding: 0;
+    
+    
+    
+   
+   
+   
+    /* text-align: center;
+    height: 100%;
+    background: url(../img/tileBG.png);
+    width: 100%;
+    background-attachment: fixed;
+    margin-left: 200px;
+    background-size: cover; */
+}
+
+
+/* Затемнение фона 
+
+main::after {
+    
+    content: "";
+    background: #000000;
+    position: fixed;
+    opacity: 0.7;
+    top: 0;
+    left: 200px;
+    right: 0;
+    bottom: 0;
+    
+    height: 1600px;
+    transition: all .25s ease ;
+    background-size: cover;
+} */
+
+.fa-solid {
+    margin-right: 10px
+}
+.fa-lg {
+    font-size: 2em;
+}
+
+.main-content {
+    text-align: center;
+    margin-top: 30px;
+    position: relative;
+    z-index: 1;
+    color: white;
+    
+   
+}
+
+.main-content .main-title {
+    margin: 20px auto;
+    max-width: 70vw; 
+    
+    
+}
+.quote {
+    width: 70vw; 
+    text-wrap: balance;
+    margin: 20px auto}
+
+.title-green {
+    color: aqua;
+}
+
+.main-title {
+    text-align: center;
+    font-size: 3vw;
+    font-weight: 700;
+    color: white;
+    line-height: 5vw;
+    margin: 0;
+    
+}
+
+.btn {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    
+    margin: 20px auto;
+}
+
+.header-content-btn {
+    background: aqua;
+    color: rgb(29, 24, 24);
+    font-size: 14px;
+    display: inline-flex;
+    align-items: center;
+    padding: 1.1vh 2vw 1.2vh;
+    font-weight: 700;
+    max-width: 100%;
+    min-height: 40px;
+    transition: all .25s ease;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.header-content-btn:hover {
+    background-color: rgb(2, 225, 225);
+}
+
+
+
+/* .img-interier {
+    position: relative;
+    z-index: 1;
+
+    background-image: url(./ttt.jpg);
+    width: 60vw;
+
+    background-position: bottom;
+    background-attachment: fixed;
+} */
+
+
+/* -----------------------------------slider---------------------------------- */
+.slider{
+    border-radius: 15px;
+    z-index: 1;
+    width: 90%;
+    max-width: 90%;
+    height: 35vw;
+    margin: 4vw auto;
+    position: relative;
+    overflow: hidden;
+}
+.slider .list{
+    
+    position: absolute;
+    width: 100%;
+    height: 80vh;
+    left: 0;
+    top: 0;
+    display: flex;
+    transition: 1s;
+}
+.slider .list img{
+    border-radius: 15px;
+    width: 90vw;
+    max-width: 90vw;
+    height: 40vw;
+    object-fit: cover;
+}
+.slider .buttons{
+    position: absolute;
+    top: 45%;
+    left: 5%;
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+
+}
+.slider .buttons button{
+    width: 5vh;
+    height: 5vh; 
+    border-radius: 50%;
+    background-color: #fff5;
+    color: #fff;
+    border: none;
+    
+}
+.fa-solid {
+    margin-left: 10px;
+}
+.slider .dots{
+    position: absolute;
+    bottom: 1%;
+    left: 0;
+    color: #fff;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+.slider .dots li{
+    list-style: none;
+    width: 10px;
+    height: 10px;
+    background-color: #fff;
+    margin: 10px;
+    border-radius: 20px;
+    transition: 0.5s;
+}
+.slider .dots li.active{
+    width: 30px;
+}
+@media screen and (max-width: 768px){
+    .slider{
+        height: 30vw;
+    }
+}
+/* -----------------------------------slider---------------------------------- */
+.news-content {
+    position: relative;
+    z-index: 1;
+}
+
+
+
+.alert {
+    position: relative;
+    width: 80vh;
+    margin: 30px auto;
+    text-align: center;
+}
+
+.alert-warning {
+  margin: 30px auto;
+  text-align: left;
+}
+
+h2 {
+    margin-top: 50px;
+    margin-bottom: -10px;
+}
+
+form {
+    position: relative;
+    width: 80vh;
+    margin: 30px auto;
+    
+}
+
+.form-control:required {
+    
+    border-color: rgb(19, 184, 60);
+}
+
+
+.form-control {
+    font-size: 14px;
+    margin-top: 5px;
+
+
+}
+h1 {
+    text-align: center;
+}
+h6 {
+    margin-top: 30px;
+}
+
+.header-content-btn {
+    border: none;
+}
+.alert {
+    margin-top: 10px;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.grid-wrapper{
+    margin: 30px 5vh;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    vertical-align: middle;
+    display: inline-block;
+}
+.grid-wrapper a {
+    margin: 4px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    display: block; 
+    overflow: hidden;
+    cursor: pointer;
+    text-decoration:none;
+}
+.grid-wrapper a img {
+    
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 5px;
+    margin-top: -24px;
+}
+
+.grid-wrapper a img {
+    border: 1px solid rgb(255, 255, 255);
+    
+}
+
+.grid-wrapper a img {
+    margin-bottom: 12px;
+    vertical-align: middle;
+    width: 100%;
+    filter: grayscale(1) brightness(0.7);
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.3s linear;
+}
+
+.grid-wrapper a img:hover {
+    filter: grayscale(0);
+    transform: scale(1.05);
+}
+
+
+.grid-wrapper {
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-auto-rows: 250px;
+    grid-auto-flow: dense;
+  
+}
+.desc {
+    font-size: 12px; 
+    font-weight: 700;
+    
+}
+.titleimg {
+    z-index: 1;
+    position: relative;
+    top: calc(50% - 21px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-family: sans-serif;
+    font-size: 16px; 
+    font-weight: 50;
+    margin: auto 20px;
+    color: #fff;
+    
+}
+
+.grid-wrapper a:hover b {
+   
+    visibility: hidden;
+}
+.main-content .text {
+    margin: 20px auto;
+    text-wrap: balance;
+    margin-top: 6vw;
+    /* max-width: 70vw;  */
+}
+/* .text {
+    
+    position: relative;
+    left: 0;
+    margin-top: 8vw;
+    width: 65vw;
+    
+} */
+/* -----------------------------------quote---------------------------------- */
+.text{
+    width: 70vw;
+
+}
+.quote{
+    font-family: "Open Sans";
+    font-size: 2vw;
+    color: aliceblue;
+   
+}
+.author{
+    max-width: 60vw; 
+    text-align: right;
+    color: aliceblue;
+}
+/* -----------------------------------quote---------------------------------- */
+
+/* -----------------------------------hr---------------------------------- */
+
+.hr {
+    width: 80%;
+    margin: auto;
+}
+
+/* -----------------------------------hr---------------------------------- */
+
+/* ----------------------------construction stages----------------------------- */
+.main .vl {
+    border-left: 6px solid green;
+    height: 500px;
+}
+.vl {
+    border-left: 6px solid aqua;
+    height: 500px;
+    position: absolute;
+    left: 50%;
+    margin-left: -4px;
+    top: 60;
+}
+
+/* ----------------------------construction stages----------------------------- */
+/* ----------------------------karta uslugi----------------------------- */
+*{
+    box-sizing: border-box;
+}
+.titleH2{
+    text-align: center;
+    font-size: 2vw;
+    font-weight: 500;
+    color: white;
+    line-height: 4vw;
+    margin-top: 3vw;
+}
+.card_container{
+    margin: 0;
+    padding: 1vw 5vw 3vw 5vw;
+    position: relative;
+}
+
+.cards {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+/* .cards__item:not(:last-child) {
+    margin-right: 20px;
+} */
+.card{
+    vertical-align: middle;
+    width: 22vw;
+    max-width: 300px; 
+    background-color: transparent;
+    height: 100%;
+    display: inline-block;
+    margin: 1%;
+    border: 1px solid rgb(117, 117, 117);
+    border-radius: 1vh;
+    text-align: center;
+    padding-bottom: 1%;
+}
+/* .card__image {
+    height: 15vw;
+} */
+.card__image img{
+    width: 22vw;
+    max-width: 300px;
+    height: 12vw;
+    object-fit: cover;
+    border-top-left-radius: 1vh;
+    border-top-right-radius: 1vh;
+}
+.card__content{
+    position: relative;
+   /* max-height: 100%; */
+   padding: 8vw auto ;
+   vertical-align: middle;
+   
+}
+
+
+.card__title{
+    font-family: sans-serif;
+    font-size: 1.5vw;
+    font-weight: 500;
+   
+}
+.card__title{
+    margin:1vh auto;
+}
+
+.card__descr{
+    font-family: sans-serif;
+    font-size: 1vw;
+    font-weight: 100;
+    margin-bottom: 1vh;
+   
+}
+
+.card__btn{
+    background: aqua;
+    color: rgb(29, 24, 24);
+    font-size: 14px;
+    /* font-size: 0.9vw; */
+    display: inline-flex;
+    align-items: center;
+    padding: 2% 1vw 2%;
+    font-weight: 700;
+    transition: all .25s ease;
+    border-radius: 5px;
+    border: none;
+}
+
+.card__btn:hover {
+    background-color: rgb(2, 225, 225);
+}
+.contact__img{
+     margin-top: 3vw;
+    
+}
+.contact__img img{
+    min-width: 260px; 
+    width: 40vw;
+    height: 40%;
+    border-radius: 1vh;
+   
+}
+
+.contact_container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    
+}
+.contact__content{
+    width: 22vw;
+    min-width: 270px;
+    border: 1px solid rgb(117, 117, 117);
+    border-radius: 1vh;
+    margin: 3% 1% 1% 1% ;
+    padding-top: 2% ;
+    padding-bottom: 2% ;
+}
+
+.contact_font{
+    font-family: sans-serif;
+    font-weight: 100;
+    
+}
+#tel1 {
+    margin-right: 4px;
+}
+#email {
+    margin-right: 4px;
+}
+
+.contact_container a { 
+    color: #fff;/*цвет ссылок*/
+    transition: 0.5s;/*плавный переход*/
+}
+#Teleg{
+    margin-left: -5px;
+}
+/* ----------------------------karta uslugi----------------------------- */
+
+
+
+
+
+
+
+/* -----------------------------------footer---------------------------------- */
+
+footer{
+    position: relative;
+    left: 80px;
+    right: 0;
+    bottom: 0;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    margin: 0 auto;
+    width: 80%;/*;на всю ширину*/
+    margin-top: 8vw;
+    background: #00000065;/*цвет футера*/ 
+    background-image: linear-gradient(to bottom right, #26222255, #0f0f0f97);
+}
+.footer{
+    margin: 20px auto;
+    max-width: 70vw; 
+    /*padding: 20px 50px 0px 50px  ;поля для контента*/
+    justify-content: space-between;/*в центре по горизонтали*/
+    display: flex;
+}
+.footer ul a {
+    padding: 10px;
+    color: #fff;/*цвет ссылок*/
+    margin: auto 10px;
+    display: block;/*отображать как блочный элемент*/
+    font-size: 14px;/*размер ссылок меню*/
+    transition: 0.5s;/*плавный переход*/
+}
+.social{
+    margin-top: 20px;
+    align-items: center;
+}
+footer .footer ul a:hover {
+    opacity: 1;
+    transform: scale(1.05);
+}
+footer > p { /*маленький текст внизу*/
+    color: #afafaf;
+    text-align: center;
+    margin-top: 15px;
+    margin-bottom: 0;
+    font-size: 12px;
+    padding-bottom: 10px;
+}
+#logo-footer{
+    margin-top: 0;
+}
+.fa-brands{
+    margin-right: 10px;
+    margin-bottom: 5px;
+}
+
+
+
+/* -----------------------------------footer---------------------------------- */
+
+
+
+
+/* .main .footer {
+     margin: 0; 
+    position: relative; 
+    margin-top: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+  
+    height: 8vw; 
+   } 
+.main .footer .content{
+    position: relative;
+    width: 100%; 
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #00000065; 
+    align-items: center;
+}
+
+.all-symbols {
+    padding-left:200px;
+    margin: auto 60px;
+    align-items: center;
+}
+
+
+.symbol:hover {
+    padding:2px;
+    background-color:#fffcfc;
+} */
+
+
+/* .grid-wrapper .wide {
+    
+    grid-column: span 2;
+
+}
+.grid-wrapper .tall {
+    grid-column: span 1;
+    grid-row: span 2;
+}
+.grid-wrapper .big {
+    grid-column: span 1;
+    grid-row: span 2;
+} */
+
+
+
+
+   

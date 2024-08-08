@@ -1,0 +1,55 @@
+{% extends 'main/layout.html' %}
+
+{% block title %}Services{% endblock %}
+
+
+{% block content %}
+            <div class="main-content">
+                <h1 class="main-title">
+                    Види наших робіт за які ми
+                    <span class="title-green">несемо відповідальність</span>
+                    !
+                </h1>
+                
+                <div class="contact__img">
+                    <img src="../files/covers/hummer2.png" alt="">
+                </div>
+               
+                <div class="card_container">
+                    <ul class="cards">
+                        
+                        <li class="cards__item">
+                        {% for product in products %}
+                            <article class="card">
+                                <div class="card__image">
+                                    <img src="{{ product.image.url}}" alt="">    
+                                </div>
+                                <div class="card__content">
+                                    <h3 class="card__title">{{product.name}}</h3>
+                                    {% comment %} <p class="card__descr">
+                                        Подробное описание услуги
+                                    </p> {% endcomment %}
+                                    <div>
+                                        <p class="card__descr collapse" id="collapseElement{{product.id}}">
+                                            Подробное описание услуги
+                                            Подробное описание услуги
+                                            Подробное описание услуги
+                                            Подробное описание услуги
+                                            Подробное описание услуги
+                                        </p> 
+                                        <button data-bs-toggle="collapse" data-bs-target="#collapseElement{{product.id}}" class="card__btn">Більше...</button>
+                                    </div>
+                                    
+                                </div>
+                             </article>
+                            {% endfor %} 
+                            
+                        </li>
+                    </ul>
+                </div>
+                <p class="quote">За час нашої діяльності ми зібрали команду кращих узкоспециализирущих майстрів, спеціалістів широкого профілю, кращих техніків, електронників, будівельників і майстрів своєї справи. Це дозволило нам вийти на високий рівень на ринку будівництва та ремонту.
+                    Ми вузько спеціалізуємось на будівельних роботах. Досвід майстрів нашої компанії дозволить виконати навіть найнеймовірніші задуми. Всі види будівельних робіт, які роблять наші бригади майстрів - це роботи найвищої якості.</p>
+               
+            </div>
+            
+{% endblock %}

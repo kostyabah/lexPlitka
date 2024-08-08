@@ -1,0 +1,167 @@
+{% extends 'main/layout.html' %}
+
+{% block title %}l e x P l i t k a{% endblock %}
+
+
+{% block content %}
+           <div class="main-content">
+                <h1 class="main-title">Вид вашої квартири це ваше<br>
+                    <span class="title-green">внутрішнє мистецтво!</span>
+                </h1>
+                <div class="slider">
+                    <div class="list">
+                        <div class="item">
+                            <img src="https://images.pexels.com/photos/6585765/pexels-photo-6585765.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="">
+                        </div>
+                        <div class="item">
+                            <img src="https://images.pexels.com/photos/7227645/pexels-photo-7227645.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="">
+                        </div>
+                        <div class="item">
+                            <img src="https://images.pexels.com/photos/7195735/pexels-photo-7195735.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="">
+                        </div>
+                        <div class="item">
+                            <img src="https://images.pexels.com/photos/7214159/pexels-photo-7214159.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="">
+                        </div>
+                        <div class="item">
+                            <img src="https://images.pexels.com/photos/16249146/pexels-photo-16249146.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="">
+                        </div>
+                        <div class="item">
+                            <img src="https://images.pexels.com/photos/6585604/pexels-photo-6585604.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="">
+                        </div>
+                         <div class="item">
+                            <img src="https://images.pexels.com/photos/10366181/pexels-photo-10366181.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt=""></div>
+                         </div>
+                    <div class="buttons">
+                        <button id="prev">
+                            <i class="fa-solid fa-chevron-left"></i>
+                        </button>
+                        <button id="next"><i class="fa-solid fa-chevron-right"></i></button>
+                    </div>
+                    <ul class="dots">
+                        <li class="active"></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                    </ul>
+                </div>
+           
+                <div class="text">
+                    <p class="quote"> "  У нас ніколи не вистачає часу та грошей зробити все правильно та якісно, ​​але завжди є час потім це все переробляти  "</p>
+                    <br>
+                    <p class="author">Син маминої подруги</p>
+                    <br>
+                    <hr class="hr">
+                </div>
+                <h2 class="titleH2">
+                    Наші послуги
+                </h2>
+                <div class="card_container">
+                    <ul class="cards">
+                        <li class="cards__item">
+                            <article class="card">
+                                <div class="card__image">
+                                    <img src="files/covers/2.jpeg" alt="">    
+                                </div>
+                                <div class="card__content">
+                                    <h3 class="card__title">Укладка плитки</h3>
+                                    {% comment %} <p class="card__descr">
+                                        Подробное описание услуги
+                                    </p> {% endcomment %}
+                                    {% comment %} <button class="card__btn">Дізнатись більше</button> {% endcomment %}
+                                </div>
+                             </article>
+
+                            <article class="card">
+                                <div class="card__image">
+                                    <img src="files/covers/1.jpeg" alt="">
+                                    
+                                </div>
+                                <div class="card__content">
+                                    <h3 class="card__title">Електромонтаж</h3>
+                                    {% comment %} <p class="card__descr">
+                                        Подробное описание услуги
+                                    </p> {% endcomment %}
+                                    {% comment %} <button class="card__btn">Дізнатись більше</button> {% endcomment %}
+                                </div>
+                            </article>
+                            <article class="card">
+                                <div class="card__image">
+                                    <img src="files/covers/3.jpeg" alt="">
+                                    
+                                </div>
+                                <div class="card__content">
+                                    <p class="card__title">Сантехніка</p>
+                                    {% comment %} <p class="card__descr">
+                                        Подробное описание услуги
+                                    </p> {% endcomment %}
+                                    {% comment %} <button class="card__btn">Дізнатись більше</button> {% endcomment %}
+                                </div>
+                            </article>
+                            <article class="card">
+                                <div class="card__image">
+                                    <img src="files/covers/4.jpeg" alt="">
+                                    
+                                </div>
+                                <div class="card__content">
+                                    <h3 class="card__title">Штукатурка</h3>
+                                    {% comment %} <p class="card__descr">
+                                        Подробное описание услуги
+                                    </p> {% endcomment %}
+                                    {% comment %} <button class="card__btn">Дізнатись більше</button> {% endcomment %}
+                                </div>
+                             </article>
+
+                            <article class="card">
+                                <div class="card__image">
+                                    <img src="files/covers/5.jpeg" alt="">
+                                    
+                                </div>
+                                <div class="card__content">
+                                    <h3 class="card__title">Малярка</h3>
+                                    {% comment %} <p class="card__descr">
+                                        Подробное описание услуги
+                                    </p> {% endcomment %}
+                                    {% comment %} <button class="card__btn">Дізнатись більше</button> {% endcomment %}
+                                </div>
+                            </article>
+                            <article class="card">
+                                <div class="card__image">
+                                    <img src="files/covers/6.jpeg" alt="">
+                                    
+                                </div>
+                                <div class="card__content">
+                                    <h3 class="card__title">Розробка проекту</h3>
+                                    {% comment %} <p class="card__descr">
+                                        Подробное описание услуги
+                                    </p> {% endcomment %}
+                                    {% comment %} <button class="card__btn">Дізнатись більше</button> {% endcomment %}
+                                </div>
+                            </article>
+                        </li>
+                    </ul>
+                </div>
+              
+                <br>
+                <br>
+                <hr class="hr">
+           </div>
+
+           
+          
+          
+<!--            <div class="btn">-->
+<!--                <a href="#" class="header-content-btn">Детальніше</a>-->
+<!--            </div>-->
+
+    
+
+<!--             <div class="interier">-->
+<!--                 <img class="img-interier" src="/static/main/img/interer.jpg"  alt="interier">-->
+<!--            </div>-->
+
+    <script src="/app.js"></script>
+
+{% endblock %}
