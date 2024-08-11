@@ -51,6 +51,7 @@ window.addEventListener('load', ()=> {
   document.body.addEventListener('click', ()=>{
     allContent[0].classList.remove('collapse');
     allContent[1].classList.remove('collapse');
+    
     cardsDoms.forEach((card, i_card) => {
       //bootstrap.Collapse.getOrCreateInstance
       let instanceCollapse = getOrCreateInstance(card)
@@ -66,8 +67,6 @@ window.addEventListener('load', ()=> {
   
   
   cardsDoms.forEach((card, i_btn) => {
-    console.log(i_btn);
-
     let btn = card.querySelector('.card__btn')
     let hideContent = card.querySelector('.card__content .addons') 
     let card_collapse = getOrCreateInstance(card)
@@ -77,26 +76,30 @@ window.addEventListener('load', ()=> {
       e.stopPropagation();
       allContent[0].classList.add('collapse');
       allContent[1].classList.add('collapse');  
-      cardsDoms.forEach((card, i_card) => {
-        let instanceCollapse = getOrCreateInstance(card)
-        let btn = getOrCreateInstance(
-          card.querySelector('.card__btn')
-        )
-        let hideContent = getOrCreateInstance(
-          card.querySelector('.card__content .addons')
-        )  
-        if(card_collapse !== instanceCollapse){
-          instanceCollapse.removeClass('expand-card')
-          instanceCollapse.hide()
-          hideContent.hide()
-          btn.show();
-        }else{
-          instanceCollapse.addClass('expand-card')
-          card_collapse.show();
-          hideContent.show()
-          btn.hide();
-        }
-      })
+      document.body.scrollIntoView({behavior: "smooth"});
+      setTimeout(() => {
+        cardsDoms.forEach((card, i_card) => {
+          let instanceCollapse = getOrCreateInstance(card)
+          let btn = getOrCreateInstance(
+            card.querySelector('.card__btn')
+          )
+          let hideContent = getOrCreateInstance(
+            card.querySelector('.card__content .addons')
+          )  
+          if(card_collapse !== instanceCollapse){
+            instanceCollapse.removeClass('expand-card')
+            instanceCollapse.hide()
+            hideContent.hide()
+            btn.show();
+          }else{
+            instanceCollapse.addClass('expand-card')
+            card_collapse.show();
+            hideContent.show()
+            btn.hide();
+          }
+        })
+      }, 500)
+      
     })
   })
 })
