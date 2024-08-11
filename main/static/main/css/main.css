@@ -1,3 +1,4 @@
+@import url('../css/toggle_animations.css');
 html{
     height: 100%;
 }
@@ -172,10 +173,6 @@ main {
     transition: all .25s ease;
     cursor: pointer;
     color: aqua;
-    
-    .tel {
-        color: aqua;
-    }
 }
 /* -----------------------------------aside---------------------------------- */
 

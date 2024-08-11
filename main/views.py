@@ -10,10 +10,9 @@ def index(request):
 def products(request):
     
     
-    productsList = list(Product.objects.all());
     # for prod in productsList:
     #     print(prod.id)
-
+    productsList = list(Product.objects.all());
     return render(request, 'main/products.html',{'products': productsList})
 
 def services(request):
