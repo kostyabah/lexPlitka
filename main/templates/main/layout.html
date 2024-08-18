@@ -101,11 +101,17 @@
                     </p>
                 </div>
             </a>
-        </div>
             
+        </div>
+        <div class="d-sm-none d-block" style="position: absolute; left: 0px">
+            <div class="mt-2" data-bs-toggle="offcanvas" data-bs-target="#menu">
+                <img src="{% static 'main/img/btn-open-menu.svg' %}"   />
+            </div>
+            
+        </div>    
         
         {% for message in messages %}
-        <div
+        <div style="z-index: 10000;"
           class="alert alert-{{message.tags}} alert-dismissible fade show"
           role="alert">
           <strong></strong> {{message}}
@@ -117,12 +123,7 @@
         </div>
         {% endfor %}
         
-        <div class="d-sm-none d-block">
-            <div class="mt-2" data-bs-toggle="offcanvas" data-bs-target="#menu">
-                <img src="{% static 'main/img/btn-open-menu.svg' %}"   />
-            </div>
-            
-        </div>
+        
         {% block content %}
         {% endblock %}
         
@@ -134,12 +135,12 @@
             <a class="small-scale logo-container flex-column flex-sm-row" id="logo-footer" href="{% url 'home' %}">
                 <img class="logo-img ml-0" src="{% static 'main/img/icons8.png' %}" width="40px" alt="logo">
                 <div class="logo-text">
-                    <p class="d-sm-none" style="font-size: 14px;">
+                    <p>
                         <span class="title-aqua">lex</span>Plitka
                     </p>
-                    <p class="d-none d-sm-block;">
+                    <!-- <p class="d-none d-sm-block;">
                         <span class="title-aqua">lex</span>Plitka
-                    </p>
+                    </p> -->
                 </div>
             </a>
         
