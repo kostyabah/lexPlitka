@@ -35,10 +35,10 @@ main {
     height: 100vh;
     background-color: #0f0f0f;
     background-image: linear-gradient(to bottom right, #262222, #0f0f0f);
-    width: 170px;
-    position: fixed;
+    width: 100%;
+    /* position: fixed;
     top: 0;
-    left: 0;
+    left: 0; */
     display: flex;
     flex-direction: column;
 }
@@ -111,6 +111,29 @@ main {
 /* -----------------------------------новое для анимации---------------------------------- */
 
 
+
+.logо-box {
+    position: relative;
+    height: 200px;
+    width: 100vw;
+}
+@media(min-width: 576px){
+        
+    
+}
+@media(max-width: 576px){
+    .logo{
+        position: absolute !important;
+        right: 50px;
+            
+    }
+    
+}
+.logo{
+    left: 0px;
+    position: fixed;
+    z-index: 9999;
+}
 .logo-container {
     display: flex;
     align-items: center;
@@ -176,24 +199,27 @@ main {
 }
 /* -----------------------------------aside---------------------------------- */
 
-.main {
-    margin-left: 170px;
-    margin-right: 0;
-    padding: 0;
+@media(min-width: 576px){
+    .main {
+        margin-left: 170px;
+        margin-right: 0;
+        padding: 0;
+        
+        
+        
     
     
     
-   
-   
-   
-    /* text-align: center;
-    height: 100%;
-    background: url(../img/tileBG.png);
-    width: 100%;
-    background-attachment: fixed;
-    margin-left: 200px;
-    background-size: cover; */
+        /* text-align: center;
+        height: 100%;
+        background: url(../img/tileBG.png);
+        width: 100%;
+        background-attachment: fixed;
+        margin-left: 200px;
+        background-size: cover; */
+    }
 }
+
 
 
 /* Затемнение фона 
@@ -604,7 +630,12 @@ img {
 /* .cards__item:not(:last-child) {
     margin-right: 20px;
 } */
+.card:not(.expand-card):hover{
+    transform: scale(1.2) !important;
+}
+
 .card{
+    transform: scale(0.9);
     vertical-align: middle;
     width: 22vw;
     max-width: 300px; 
@@ -728,7 +759,11 @@ img {
 
 
 /* -----------------------------------footer---------------------------------- */
-
+@media(max-width: 576px){
+    footer{
+        left: 0px !important;
+    }
+}
 footer{
     position: relative;
     left: 80px;

@@ -1,6 +1,19 @@
+function initialDesktop(){
+  if(window.innerWidth > 576){
+    setTimeout(() => {
+      document.querySelector('#menu').classList.add('show');
+    }, 2000)
+    
+  }
+  
+}
+initialDesktop();
+
+
+
 var more_btns = document.querySelectorAll('div.card_container .card .card__btn')
 var cards = document.querySelectorAll('div.card_container .card')
-var text_deeps = document.querySelectorAll('div.card_container .card__content .collapse')
+var text_deeps = document.querySelectorAll('div.card_container .card__content .addons')
 
 //cards = [].map.call(cards, (item) => new bootstrap.Collapse(item) )
 //var collapse_more_btns = [].map.call(more_btns, (item) => new bootstrap.Collapse(item) )
@@ -47,7 +60,25 @@ function getOrCreateInstance(el){
   
 window.addEventListener('load', ()=> {
   var cardsDoms = document.querySelectorAll('div.card_container .card')
-  cardsDoms.forEach((card) => getOrCreateInstance(card))
+  cardsDoms.forEach((card, i) => {
+    card.addEventListener('click', (e) => e.stopPropagation() )
+    if(window.innerWidth > 576){
+      card.addEventListener('mouseenter', (e) => {
+        if(!card.classList.contains('expand')){
+          card.classList.add('enter')
+        }
+        
+      })
+      card.addEventListener('mouseleave', (e) => {
+        if(!card.classList.contains('expand')){
+          card.classList.remove('enter')
+        }
+        
+      })
+    }
+    
+    getOrCreateInstance(card)
+  })
   document.body.addEventListener('click', ()=>{
     allContent[0].classList.remove('collapse');
     allContent[1].classList.remove('collapse');
@@ -58,6 +89,7 @@ window.addEventListener('load', ()=> {
       let btn = getOrCreateInstance(card.querySelector('.card__btn'))
       let hideContent = getOrCreateInstance(card.querySelector('.card__content .addons')) 
       instanceCollapse.removeClass('expand-card')
+      instanceCollapse.removeClass('collapse')
       instanceCollapse.show();
       hideContent.hide();
       btn.show();
@@ -87,11 +119,14 @@ window.addEventListener('load', ()=> {
             card.querySelector('.card__content .addons')
           )  
           if(card_collapse !== instanceCollapse){
+            instanceCollapse.addClass('collapse')
             instanceCollapse.removeClass('expand-card')
             instanceCollapse.hide()
             hideContent.hide()
             btn.show();
           }else{
+            instanceCollapse.removeClass('collapse')
+            //card_collapse.removeClass('enter')
             instanceCollapse.addClass('expand-card')
             card_collapse.show();
             hideContent.show()

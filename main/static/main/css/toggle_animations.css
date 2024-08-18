@@ -1,6 +1,14 @@
+.offcanvas {
+  width: 170px !important;
+  /*
+  min-width: 148px !important;
+  max-width: 45vw !important;
+  */
+  transition: .3s ease-in-out !important;
+}
 .card{
   /* display: block !important; */
-  transition: .3s !important;
+  transition: .3s ease-in-out !important;
 }
 
 .card .card__image img{
@@ -22,6 +30,7 @@
   text-align: left !important;
 }
 
+
 .addons{
   overflow-y: hidden;
   transition: .3s !important;
@@ -33,12 +42,18 @@
   color: lightgray;
   font-size: 1.5rem !important;
 }
+.card.enter:not(.expand-card) .button{
+  display: none;
+}
+.card.enter:not(.expand-card) p:not(:first-child){
+  display: none;
+} 
 .addons p {
   margin-top: 4px;
   margin-bottom: 4px;
   color: lightgray;
 }
-.hide{
+.card:not(.enter) .hide{
   padding: 0px !important;
   margin: 0px !important;
   border: none !important;
@@ -48,7 +63,15 @@
   /* display: none;*/
   transform: scale(0) !important;  
 }
+.expand-card .card__btn{
+  display: none;
+}
+.card.expand-card:hover {
+  transform: scale(1) !important;
+}
+
 .expand-card{
+  transform: scale(1) !important;
   display: block !important;
   margin: 0 auto !important;
 
