@@ -1,1 +1,3 @@
 /lexPlitka/settings.py
+db.sqlite3
+._db.sqlite3
