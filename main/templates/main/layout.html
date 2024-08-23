@@ -30,8 +30,8 @@
         <aside class="aside">
             
             
-            <div class="header"  >
-                <div class="d-sm-none ">
+            <div class="header" style="display: flex; justify-content: space-between; flex-direction: column;"   >
+                <div class="d-sm-none pt-2">
                     <div type="button" class="btn-close-menu" data-bs-dismiss="offcanvas" aria-label="Close">
                         <img class="" src="{% static 'main/img/btn-close.svg' %}" width="40px">
                     
@@ -72,7 +72,7 @@
 
                     </ul>
                 <div class="btn">
-                    <a class="button" href="{% url 'order_form' %}">
+                    <a class="button m-0" href="{% url 'order_form' %}">
                         <svg id="tel" xmlns="http://www.w3.org/2000/svg"
                             height="1em"
                             viewBox="0 0 512 512">
