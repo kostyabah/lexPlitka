@@ -331,16 +331,17 @@ main::after {
     z-index: 1;
     width: 90%;
     max-width: 90%;
-    height: 35vw;
+    /* height: 35vw; */
+    height: auto;
     margin: 4vw auto;
     position: relative;
     overflow: hidden;
 }
 .slider .list{
     
-    position: absolute;
+    /* position: absolute; */
     width: 100%;
-    height: 80vh;
+    height: auto;
     left: 0;
     top: 0;
     display: flex;

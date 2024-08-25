@@ -6,27 +6,70 @@ let dots = document.querySelectorAll('.slider .dots li');
 
 let lengthItems = items.length - 1;
 let active = 0;
-next.onclick = function(){
+
+
+
+
+
+function nextSide(){
     active = active + 1 <= lengthItems ? active + 1 : 0;
     reloadSlider();
 }
-prev.onclick = function(){
+next.onclick = nextSide;
+function prevSide(){
     active = active - 1 >= 0 ? active - 1 : lengthItems;
     reloadSlider();
 }
-let refreshInterval = setInterval(()=> {next.click()}, 3000);
+prev.onclick = prevSide;
+isAutoSlide = true;
+let refreshInterval = setInterval(()=> {
+    if(isAutoSlide){
+        next.click()
+    }
+    
+}, 3000);
 function reloadSlider(){
-    slider.style.left = -items[active].offsetLeft + 'px';
+    //slider.style.marginLeft = -items[active].offsetLeft + 'px';
+    slider.style.marginLeft = -items[active].offsetWidth * active + 'px';
     //
     let last_active_dot = document.querySelector('.slider .dots li.active');
     last_active_dot.classList.remove('active');
     dots[active].classList.add('active');
 
     clearInterval(refreshInterval);
-    refreshInterval = setInterval(()=> {next.click()}, 3000);
+    refreshInterval = setInterval(()=> {
+
+        if(isAutoSlide){
+            next.click()
+        }
+    }, 3000);
 
 
 }
+let startTouchX = 0; 
+let endTouchX = 0;
+slider.addEventListener('touchstart', (event) => {
+    console.log('touchstart')
+    isAutoSlide = false;
+    startTouchX = event.changedTouches[0].pageX;
+})
+slider.addEventListener('touchend', (event) => {
+    console.log('touschend')
+    endTouchX = event.changedTouches[0].pageX;
+    if( endTouchX > startTouchX){
+        if( Math.abs(endTouchX - startTouchX) > 20){
+            nextSide();
+        }
+    }
+    if( endTouchX < startTouchX){
+        if( Math.abs(endTouchX - startTouchX) > 20){
+            prevSide();
+        }
+    }
+    setTimeout(() => {
+        isAutoSlide = true;
+    }, 2000)
+})
 
 dots.forEach((li, key) => {
     li.addEventListener('click', ()=>{
