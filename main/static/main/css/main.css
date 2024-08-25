@@ -310,7 +310,9 @@ main::after {
 .header-content-btn:hover {
     background-color: rgb(2, 225, 225);
 }
-
+.transition-wild{
+    transition-duration: .1s !important;
+}
 
 
 /* .img-interier {

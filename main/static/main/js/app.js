@@ -58,7 +58,7 @@ let endTouchX = 0;
 
 slider.addEventListener('touchstart', (event) => {
     event.preventDefault();
-    
+    slider.style.transitionDuration = '0s'
     isAutoSlide = false;
     startTouchX = event.changedTouches[0].pageX;
     endTouchX = startTouchX;
@@ -73,7 +73,8 @@ slider.addEventListener('touchmove', (event) => {
 let waitFinishTouchEnd;
 slider.addEventListener('touchend', (event) => {
     event.preventDefault();
-    
+    slider.classList.remove('transition-wild')
+    slider.style.transitionDuration = '0.5s'
     endTouchX = event.changedTouches[0].pageX;
     let swipeOffset = endTouchX - startTouchX;  
     endTouchX  = 0 
@@ -91,6 +92,7 @@ slider.addEventListener('touchend', (event) => {
     
     clearTimeout(waitFinishTouchEnd);
     waitFinishTouchEnd = setTimeout(() => {
+        slider.style.transitionDuration = '1s'
         isAutoSlide = true;
     }, 5000)
 }, {capture: false, passive: false})
