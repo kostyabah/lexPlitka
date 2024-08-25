@@ -49,11 +49,13 @@ function reloadSlider(){
 let startTouchX = 0; 
 let endTouchX = 0;
 slider.addEventListener('touchstart', (event) => {
+    event.preventDefault();
     console.log('touchstart')
     isAutoSlide = false;
     startTouchX = event.changedTouches[0].pageX;
-})
+}, {capture: false, passive: false})
 slider.addEventListener('touchend', (event) => {
+    event.preventDefault();
     console.log('touschend')
     endTouchX = event.changedTouches[0].pageX;
     if( endTouchX > startTouchX){
@@ -69,7 +71,7 @@ slider.addEventListener('touchend', (event) => {
     setTimeout(() => {
         isAutoSlide = true;
     }, 2000)
-})
+}, {capture: false, passive: false})
 
 dots.forEach((li, key) => {
     li.addEventListener('click', ()=>{
