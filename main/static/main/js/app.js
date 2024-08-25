@@ -31,8 +31,9 @@ let refreshInterval = setInterval(()=> {
 function reloadSlider(){
     //slider.style.marginLeft = -items[active].offsetLeft + 'px';
     let swipeOffset = endTouchX - startTouchX
-    slider.style.marginLeft = swipeOffset - items[active].offsetWidth * active + 'px';
-    //
+    //slider.style.marginLeft = 
+    let translateHorizontal = swipeOffset - items[active].offsetWidth * active + 'px';
+    slider.style.transform = 'translateX('+ translateHorizontal +')'
     let last_active_dot = document.querySelector('.slider .dots li.active');
     if(last_active_dot !== dots[active]){
         last_active_dot.classList.remove('active');
