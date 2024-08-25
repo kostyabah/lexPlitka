@@ -30,11 +30,15 @@ let refreshInterval = setInterval(()=> {
 }, 3000);
 function reloadSlider(){
     //slider.style.marginLeft = -items[active].offsetLeft + 'px';
-    slider.style.marginLeft = -items[active].offsetWidth * active + 'px';
+    let swipeOffset = endTouchX - startTouchX
+    slider.style.marginLeft = swipeOffset - items[active].offsetWidth * active + 'px';
     //
     let last_active_dot = document.querySelector('.slider .dots li.active');
-    last_active_dot.classList.remove('active');
-    dots[active].classList.add('active');
+    if(last_active_dot !== dots[active]){
+        last_active_dot.classList.remove('active');
+        dots[active].classList.add('active');
+    }
+    
 
     clearInterval(refreshInterval);
     refreshInterval = setInterval(()=> {
@@ -48,29 +52,46 @@ function reloadSlider(){
 }
 let startTouchX = 0; 
 let endTouchX = 0;
+
+
+
 slider.addEventListener('touchstart', (event) => {
     event.preventDefault();
-    console.log('touchstart')
+    
     isAutoSlide = false;
     startTouchX = event.changedTouches[0].pageX;
+    endTouchX = startTouchX;
 }, {capture: false, passive: false})
+
+slider.addEventListener('touchmove', (event) => {
+    event.preventDefault();
+    endTouchX = event.changedTouches[0].pageX;
+    reloadSlider();
+}, {capture: false, passive: false})
+
+let waitFinishTouchEnd;
 slider.addEventListener('touchend', (event) => {
     event.preventDefault();
-    console.log('touschend')
+    
     endTouchX = event.changedTouches[0].pageX;
-    if( endTouchX > startTouchX){
-        if( Math.abs(endTouchX - startTouchX) > 20){
+    let swipeOffset = endTouchX - startTouchX;  
+    endTouchX  = 0 
+    startTouchX = 0
+    if( Math.abs(swipeOffset) > 20){
+        if( swipeOffset < 0){
             nextSide();
+        
         }
-    }
-    if( endTouchX < startTouchX){
-        if( Math.abs(endTouchX - startTouchX) > 20){
+        if( swipeOffset > 0){
             prevSide();
+            
         }
     }
-    setTimeout(() => {
+    
+    clearTimeout(waitFinishTouchEnd);
+    waitFinishTouchEnd = setTimeout(() => {
         isAutoSlide = true;
-    }, 2000)
+    }, 5000)
 }, {capture: false, passive: false})
 
 dots.forEach((li, key) => {

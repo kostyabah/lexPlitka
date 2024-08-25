@@ -115,6 +115,12 @@
   .slider .dots {
     position: static;
   }
+  .slider .item {
+    width: calc(100vw - 46px) !important;
+  }
+  .slider .item img{
+    width: calc(100vw - 46px) !important;
+  }
   .card_container{
     padding: 0px;
     margin-top: 38px;
@@ -122,9 +128,14 @@
   }
   .card_container img{
     height: auto;
+    max-width: 100%;
     min-height: 90px;
 
   }
+  .card_container.small img{
+    height: calc(60px + 10vw) !important;
+  }
+  
   .card_container .expand-card{
     margin: 0px !important;
     width: 100% !important;
@@ -140,6 +151,7 @@
   .card_container .card{
     transform: scale(1);
     width: 100%;
+    max-width: 100%;
   }
   .content_for_all img{
     width: 100%;
@@ -175,6 +187,9 @@
     border: 1px solid rgb(117, 117, 117);
     border-bottom: none;
   }
+  .small .card__content {
+    height: 42px;
+  }
   .card_container .card__content {
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
@@ -185,6 +200,7 @@
   .small .card__content .card__title{
     font-size: 12px;
   }
+  
   .card__content .card__title{
     font-size: 20px;
   }

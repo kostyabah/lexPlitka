@@ -340,6 +340,7 @@ main::after {
 .slider .list{
     
     /* position: absolute; */
+    border-radius: 15px;
     width: 100%;
     height: auto;
     left: 0;
