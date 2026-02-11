@@ -1,0 +1,25 @@
+{% extends 'main/layout.html' %}
+
+{% block title %}Services{% endblock %}
+
+
+{% block content %}
+            <div class="news-content">
+                <h1 class="main-title">
+                    Останні новини від наших працівників
+                </h1>
+
+                {% for el in products %}
+                    <div class="alert alert-warning">
+                        <img src="{{ news.image.url }}">
+                        <h3>{{ product.name }}</h3>
+                        <h3>{{ el.title }}</h3> edf
+                        {{ product.price }}
+                        <p>{{ el.anons }}</p>
+                    </div>
+                {% endfor %}
+            </div>
+
+
+
+{% endblock %}

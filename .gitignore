@@ -1,0 +1,6 @@
+/lexPlitka/settings.py
+db.sqlite3
+._db.sqlite3
+main/static/main/img/*.apk
+main/static/main/img/*.exe
+main/static/main/img/*.zip

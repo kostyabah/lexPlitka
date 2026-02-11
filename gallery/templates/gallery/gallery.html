@@ -1,0 +1,23 @@
+{% extends 'main/layout.html' %}
+
+{% block title %}l e x P l i t k a{% endblock %}
+  
+{% block content %}
+        <div class="main-content"> 
+            <h2 class="main-title">
+                Фотоколекція наших робіт
+            </h2>                  
+            <div class="grid-wrapper">
+                {% for results in imggal %} 
+                
+                    <a href="{{results.image.url}}">  
+                        
+                        <b class="titleimg">{{results.imgdesc}}</b>
+                        <img src="{{results.image.url}}"/>             
+                                                            
+                    </a>
+                    {% comment %} <b class="titleimg">{{results.imgtitle}}</b>   {% endcomment %}
+                {% endfor %} 
+            </div>      
+        </div>   
+{% endblock %}
