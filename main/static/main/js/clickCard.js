@@ -61,7 +61,7 @@ function getOrCreateInstance(el){
 window.addEventListener('load', ()=> {
   var cardsDoms = document.querySelectorAll('div.card_container .card')
   cardsDoms.forEach((card, i) => {
-    //card.addEventListener('click', (e) => e.stopPropagation() )
+    card.addEventListener('click', (e) => e.stopPropagation() )
     if(window.innerWidth > 576){
       card.addEventListener('mouseenter', (e) => {
         if(!card.classList.contains('expand')){
@@ -79,7 +79,7 @@ window.addEventListener('load', ()=> {
     
     getOrCreateInstance(card)
   })
-  let allowOutClick = false;
+  let allowOutClick = true;
   document.body.addEventListener('click', (evt)=>{
     
     if(allowOutClick){
@@ -90,12 +90,14 @@ window.addEventListener('load', ()=> {
       cardsDoms.forEach((card, i_card) => {
         //bootstrap.Collapse.getOrCreateInstance
         let instanceCollapse = getOrCreateInstance(card)
+        let carousel = getOrCreateInstance(card.querySelector('.carousel'))
         let btn = getOrCreateInstance(card.querySelector('.card__btn'))
         let hideContent = getOrCreateInstance(card.querySelector('.card__content .addons')) 
         instanceCollapse.removeClass('expand-card')
         instanceCollapse.removeClass('collapse')
         instanceCollapse.show();
         hideContent.hide();
+        carousel.hide()
         btn.show();
         //more_btns[i_card].hide();
       })
@@ -111,7 +113,7 @@ window.addEventListener('load', ()=> {
     card_collapse.btn = btn;
     card_collapse.hideContent = hideContent;
     btn && btn.addEventListener('click', (e) => {
-      //e.stopPropagation();
+      e.stopPropagation();
       allowOutClick = true;
       allContent.forEach((outContent) => {
         outContent.classList.add('collapse');
@@ -127,11 +129,13 @@ window.addEventListener('load', ()=> {
           let hideContent = getOrCreateInstance(
             card.querySelector('.card__content .addons')
           )  
+          let carousel = getOrCreateInstance(card.querySelector('.carousel'))
           if(card_collapse !== instanceCollapse){
             instanceCollapse.addClass('collapse')
             instanceCollapse.removeClass('expand-card')
             instanceCollapse.hide()
             hideContent.hide()
+            carousel.hide();
             btn.show();
           }else{
             instanceCollapse.removeClass('collapse')
@@ -139,6 +143,7 @@ window.addEventListener('load', ()=> {
             instanceCollapse.addClass('expand-card')
             card_collapse.show();
             hideContent.show()
+            carousel.show()
             btn.hide();
           }
         })

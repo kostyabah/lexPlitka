@@ -57,21 +57,19 @@ main {
     font-size: 14px;
    
 }
+
+
 * {
     pointer-events: auto;
 }
+
 .carousel button {
     pointer-events: auto !important;
 }
 .carousel-item{
     pointer-events: none !important;
 }
-.gallery-product img{
-    max-height: 200px !important;
-    min-height: 200px;
-    background: none !important;
-    object-fit: contain;
-}
+
 /* .nav-list li:hover, .nav-list-link.active{
     
     transform: scale(1.02);
