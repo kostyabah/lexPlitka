@@ -91,14 +91,18 @@ window.addEventListener('load', ()=> {
         //bootstrap.Collapse.getOrCreateInstance
         let instanceCollapse = getOrCreateInstance(card)
         let carousel = getOrCreateInstance(card.querySelector('.carousel'))
+        let image = getOrCreateInstance(card.querySelector('.card__image'))
         let btn = getOrCreateInstance(card.querySelector('.card__btn'))
         let hideContent = getOrCreateInstance(card.querySelector('.card__content .addons')) 
         instanceCollapse.removeClass('expand-card')
         instanceCollapse.removeClass('collapse')
         instanceCollapse.show();
         hideContent.hide();
-        carousel.hide()
+        //carousel.hide()
+        //image.show();
         btn.show();
+        card.querySelector('.carousel').classList.add('d-none'); 
+        card.querySelector('.card__image').classList.remove('d-none')
         //more_btns[i_card].hide();
       })
     }
@@ -111,6 +115,7 @@ window.addEventListener('load', ()=> {
     let hideContent = card.querySelector('.card__content .addons') 
     let card_collapse = getOrCreateInstance(card)
     card_collapse.btn = btn;
+    let image = getOrCreateInstance(card.querySelector('.card__image'))
     card_collapse.hideContent = hideContent;
     btn && btn.addEventListener('click', (e) => {
       e.stopPropagation();
@@ -135,7 +140,10 @@ window.addEventListener('load', ()=> {
             instanceCollapse.removeClass('expand-card')
             instanceCollapse.hide()
             hideContent.hide()
-            carousel.hide();
+            // carousel.hide();
+            // image.show()
+            card.querySelector('.carousel').classList.add('d-none'); 
+            card.querySelector('.card__image').classList.remove('d-none')
             btn.show();
           }else{
             instanceCollapse.removeClass('collapse')
@@ -143,7 +151,15 @@ window.addEventListener('load', ()=> {
             instanceCollapse.addClass('expand-card')
             card_collapse.show();
             hideContent.show()
-            carousel.show()
+            // carousel.show()
+            // image.hide()
+            // 
+            card.querySelector('.carousel').classList.remove('d-none'); 
+            card.querySelector('.card__image').classList.add('d-none')
+            // card.querySelectorAll('carousel-item').forEach((item, i) =>{
+            //   i && item.classList.remove('d-none')
+            // })
+            // card.querySelector('carousel-indicators').classList.remove('d-none')
             btn.hide();
           }
         })

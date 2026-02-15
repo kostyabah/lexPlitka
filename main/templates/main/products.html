@@ -21,8 +21,10 @@
                         <li class="cards__item">
                         {% for product in products %}
                             <article class="card">
-                                
-                                <div id="ProductGallery{{forloop.counter}}" style="padding-bottom: 5rem;" class=" carousel slide carousel-fade"  data-bs-ride="carousel">
+                                <div class="card__image">
+                                    <img src="{{ product.image.url}}" alt="">    
+                                </div>
+                                <div id="ProductGallery{{forloop.counter}}" style="padding-bottom: 5rem;" class="d-none carousel slide carousel-fade"  data-bs-ride="carousel">
                                     <div class="carousel-indicators" >
                                         <button type="button" style="height: 50px;" data-bs-target="#ProductGallery{{forloop.counter}}" data-bs-slide-to="{{0}}" class="active">
                                             <img class="d-block h-100 mx-auto img-thumbnail " style="object-fit: cover" src="{{ product.image.url }}" alt="">
